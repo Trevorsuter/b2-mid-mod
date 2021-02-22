@@ -1,0 +1,8 @@
+<h1><%= @park.name %></h1>
+<p>Admissions Fee: <%= @park.admissions %></p>
+<section class="rides">
+  <b>Rides:</b> <br>
+  <% @rides.each do |ride| %>
+    <%= ride.name %>
+  <% end %>
+</section>

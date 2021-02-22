@@ -16,6 +16,9 @@ ride2 = Ride.create!(name: "Tea Cups", thrill_rating: 7)
 ride3 = Ride.create!(name: "Basketball", thrill_rating: 4)
 ride4 = Ride.create!(name: "Bouncy Castle", thrill_rating: 1, open: false)
 
+park1 = Park.create!(name: "Elitch Gardens", admissions: 50.00)
+park2 = Park.create!(name: "Boondocks", admissions: 24.00)
+
 RideMechanic.create(ride: ride1, mechanic: trevor)
 RideMechanic.create(ride: ride1, mechanic: jack)
 RideMechanic.create(ride: ride2, mechanic: jack)
@@ -26,4 +29,7 @@ RideMechanic.create(ride: ride3, mechanic: jack)
 RideMechanic.create(ride: ride4, mechanic: brian)
 RideMechanic.create(ride: ride4, mechanic: trevor)
 
-
+ParkRide.create!(park: park1, ride: ride1)
+ParkRide.create!(park: park1, ride: ride2)
+ParkRide.create!(park: park2, ride: ride3)
+ParkRide.create!(park: park2, ride: ride4)
