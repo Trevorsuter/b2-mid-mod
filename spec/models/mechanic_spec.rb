@@ -26,5 +26,15 @@ RSpec.describe Mechanic, type: :model do
       expect(trevor.rides_by_thrill_rating).to eq([ride2, ride1])
       expect(trevor.rides_by_thrill_rating).to_not eq([ride1, ride2])
     end
+
+    it 'can add a new ride to the mechanic' do
+      trevor = Mechanic.create(name: "Trevor Suter", years_experience: 2)
+      ride1 = Ride.create!(name: "Roller Coaster", thrill_rating: 2)
+      ride2 = Ride.create!(name: "Tea Cups", thrill_rating: 7)
+      trevor.add_ride(ride1.id)
+      trevor.add_ride(ride2.id)
+
+      expect(trevor.rides).to eq([ride1, ride2])
+    end
   end
 end

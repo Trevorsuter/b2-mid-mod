@@ -11,4 +11,9 @@ class Mechanic < ApplicationRecord
   def rides_by_thrill_rating
     rides.order(thrill_rating: :desc)
   end
+
+  def add_ride(id)
+    ride = Ride.find(id)
+    RideMechanic.create(ride: ride, mechanic: self)
+  end
 end

@@ -2,7 +2,15 @@
 <p><b>Years of Experience: <%= @mechanic.years_experience %></b></p><hr>
 
 <section class="rides">
+<b>Rides:</b> <br>
   <% @mechanic.rides_by_thrill_rating.each do |ride| %>
-    <%= ride.name if ride.open == true %>
+    <%= ride.name if ride.open == true %> <br>
+  <% end %>
+</section>
+<section class="new-ride">
+  <%= form_with method: :patch, local: :true do |f| %>
+    <%= f.label :add_ride %>
+    <%= f.text_field :add_ride %>
+    <%= f.button :submit %>
   <% end %>
 </section>
