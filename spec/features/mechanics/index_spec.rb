@@ -18,4 +18,13 @@ RSpec.describe 'When I visit a mechanics index page', type: :feature do
       expect(page).to have_content("#{trevor.years_experience}")
     end
   end
+
+  scenario "I see the average years of experience of all mechanics" do
+    trevor = Mechanic.create(name: "Trevor Suter", years_experience: 2)
+    jack = Mechanic.create(name: "Jack Berry", years_experience: 4)
+
+    visit 'mechanics'
+    
+    expect(page).to have_content(Mechanic.average_experience)
+  end
 end
