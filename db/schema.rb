@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_170220) do
+ActiveRecord::Schema.define(version: 2021_02_22_182003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_170220) do
   create_table "rides", force: :cascade do |t|
     t.string "name"
     t.integer "thrill_rating"
-    t.boolean "open", default: true
+    t.boolean "open", default: true, null: false
   end
 
   add_foreign_key "ride_mechanics", "mechanics"
